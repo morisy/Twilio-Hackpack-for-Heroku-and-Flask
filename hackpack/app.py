@@ -4,12 +4,15 @@ from flask import Flask
 from flask import render_template
 from flask import url_for
 from flask import request
+from flask.ext.heroku import Heroku
 
 from twilio import twiml
 from twilio.util import TwilioCapability
 
 # Declare and configure application
-app = Flask(__name__, static_url_path='/static')
+# app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
+heroku = Heroku(app)
 app.config.from_pyfile('local_settings.py')
 
 
