@@ -1,5 +1,4 @@
 import re
-import time
 
 from flask import Flask
 from flask import render_template
@@ -28,8 +27,6 @@ def voice():
 def sms():
     response = twiml.Response()
     response.sms("Congratulations! You're now subscribe to Mike's Cool TinyMSG.")
-    time.sleep(60)
-    response.sms("This first message should come after one minute.")
     return str(response)
 
 
